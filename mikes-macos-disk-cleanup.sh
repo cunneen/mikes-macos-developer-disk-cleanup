@@ -26,6 +26,7 @@
 # - Android SDK packages
 # - Android AVDs
 # - Homebrew caches
+# - CocoaPods
 
 # ==== CONFIGURATION DEFAULTS - change as needed ====
 CONFIGFILE="${HOME}/.config/mikes-macos-disk-cleanup.env" # you'll be prompted to create this if it doesn't exist
@@ -68,8 +69,15 @@ if [ ${INITIALISED:-0} -ne 1 ]; then
       fi
       printf "DEVELOPMENT_BASE_DIR=${DEVELOPMENT_BASE_DIR}\n" >${CONFIGFILE}
       echo "Configuration saved to ${CONFIGFILE}"
+      echo "NOTE: subsequent invocations will immediately commence deleting files!"
     else
       echo "Not saving configuration..."
+    fi
+
+    read -p "Deleting is about to start! Proceed? [y/n]" SHOULD_PROCEED
+    if [ "${SHOULD_PROCEED}" != "y" ]; then
+      echo "Exiting..."
+      exit 1
     fi
   fi
 
@@ -119,6 +127,13 @@ INITIALSPACE=$(
     }'
 )
 echo "DISK USAGE BEFORE CLEANUP: ${INITIALSPACE}"
+
+# addHint function
+source "${DIR}/modules/hints.sh"
+
+# CocoaPods
+source "${DIR}/modules/cocoapods.sh"
+cocoapods
 
 # remove everything in ~/Library/Caches
 source "${DIR}/modules/library-caches.sh"
@@ -170,7 +185,20 @@ androidBuildFolders
 
 # Android SDKs
 source "${DIR}/modules/android-sdk.sh"
+set +e ; # don't exit on error
 androidSDK
+RETCODE=$?
+set -e; # exit on error
+
+if [ ${RETCODE} -ne 0 ]; then
+  if [ ${RETCODE} -eq 100 ]; then
+    echo "Android SDK packages already only have one version installed. Proceeding."
+  else
+    echo "!!! Failed to clean up Android SDKs !!!"
+    echo "    check the output above for more info"
+    exit ${RETCODE}
+  fi
+fi
 
 # Android AVDs
 source "${DIR}/modules/android-avd.sh"
@@ -190,8 +218,8 @@ FINALSPACE=$(
     }'
 )
 
-echo "=== FINISHED! ==="
+echo "============================== FINISHED! ================================="
 
-echo "DISK USAGE BEFORE CLEANUP: ${INITIALSPACE}"
-echo "DISK USAGE AFTER CLEANUP: ${FINALSPACE}"
+echo "BEFORE CLEANUP: ${INITIALSPACE}"
+echo "NOW: ${FINALSPACE}"
 echo "${HINTS_UPON_FINISH}"

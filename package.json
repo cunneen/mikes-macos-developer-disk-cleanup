@@ -1,6 +1,6 @@
 {
   "name": "mikes-macos-developer-disk-cleanup",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Cleans up a developer's mac disk space. Aggressively.",
   "bin": {
     "mikes-macos-disk-cleanup": "mikes-macos-disk-cleanup.sh"

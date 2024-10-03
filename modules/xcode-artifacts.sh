@@ -20,7 +20,7 @@ xcodeArtifacts() {
         # Xcode DeviceLogs
         if [ -d ${HOME}/Library/Developer/CoreSimulator/Caches ]; then
             local XCCACHESIZE=$(du -hs ${HOME}/Library/Developer/CoreSimulator/Caches | cut -f1)
-            echo "   removing Xcode Caches (${XCCACHESIZE})..."
+            echo "   removing Xcode CoreSimulator Caches (${XCCACHESIZE})..."
             rm -rf ${HOME}/Library/Developer/CoreSimulator/Caches
         fi
 
@@ -35,11 +35,11 @@ xcodeArtifacts() {
                     awk '{\
             r=$0;\
             gsub(/^[^[:space:]]+[[:space:]]+/,"",r);\
-            printf("- This command would recover %s:\n    rm -rf \"%s\"\n",$1, r);\
+            printf("- This command would recover an additional %s:\n    rm -rf \"%s\"\n",$1, r);\
           }'
             )
             echo "${DEVICESUPPORTCOMMAND}"
-            HINTS_UPON_FINISH=$(printf "${HINTS_UPON_FINISH}\n${DEVICESUPPORTCOMMAND}")
+            addHint "${DEVICESUPPORTCOMMAND}"
         fi
     fi # xcode
 }

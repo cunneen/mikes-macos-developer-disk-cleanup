@@ -40,5 +40,9 @@ rubyGems() {
         done
 
         unset IFS
+        rvm use
     }
+
+    addHint "- You might need to reinstall your ruby gems"
+    addHint "  - e.g. gem install cocoapods"
 }

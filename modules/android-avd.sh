@@ -1,6 +1,6 @@
 androidAVD() {
     # Android Virtual Device Cleanup
-    command -v avdmanager >/dev/null 2>&1 && {
+    command -v ${ANDROID_HOME}/tools/bin/avdmanager >/dev/null 2>&1 && {
         # get the full path from one of the AVDs
         local FIRST_AVD_PATH=$(avdmanager list avd | grep  "Path:" | head -1 | tr -s " "| cut -f3 -d" ")
 
@@ -21,7 +21,7 @@ androidAVD() {
         local AVDFOLDERSIZEAFTER=$(du -hs "${FIRST_AVD_PARENTPATH}" | cut -f1)
         echo "    AVD folder size before: ${AVDFOLDERSIZEBEFORE}; after: ${AVDFOLDERSIZEAFTER}"
     } || {
-        echo "'avdmanager' command not found"
+        echo "'${ANDROID_HOME}/tools/bin/avdmanager' command not found"
         return 1
     }
 }
