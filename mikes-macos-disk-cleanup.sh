@@ -84,7 +84,12 @@ INITIALISED=1 # set to 1 so that the script will not prompt again (only really m
 
 # ==== END OF CONFIGURATION ====
 # get the full path for the current dir
-DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+#   - if this is being run via "npx" then "${BASH_SOURCE[0]}" will be a symlink,
+#     so we need to get the full path to the script (and not just the symlink) so 
+#     we can load the modules from the correct location
+
+RESOLVED_SOURCE="$(node -e "const path = require('path');fs = require('fs');console.log(fs.realpathSync('${BASH_SOURCE[0]}'));")"
+DIR=$(dirname "${RESOLVED_SOURCE}")
 
 # ===== Error handling =======
 # set -e: exit on error
@@ -115,29 +120,29 @@ INITIALSPACE=$(
 )
 echo "DISK USAGE BEFORE CLEANUP: ${INITIALSPACE}"
 
-# # remove everything in ~/Library/Caches
-# source "${DIR}/modules/library-caches.sh"
-# libraryCaches
+# remove everything in ~/Library/Caches
+source "${DIR}/modules/library-caches.sh"
+libraryCaches
 
-# # remove everything from Trash - this sometimes prompts for confirmation
-# source "${DIR}/modules/trash.sh"
-# trash
+# remove everything from Trash - this sometimes prompts for confirmation
+source "${DIR}/modules/trash.sh"
+trash
 
-# # meteor
-# source "${DIR}/modules/meteor-builds-and-packages.sh"
-# meteorBuildsAndPackages
+# meteor
+source "${DIR}/modules/meteor-builds-and-packages.sh"
+meteorBuildsAndPackages
 
-# # npm cache
-# source "${DIR}/modules/npm-cache.sh"
-# npmCache
+# npm cache
+source "${DIR}/modules/npm-cache.sh"
+npmCache
 
-# # yarn cache
-# source "${DIR}/modules/yarn-cache.sh"
-# yarnCache
+# yarn cache
+source "${DIR}/modules/yarn-cache.sh"
+yarnCache
 
-# # bun cache
-# source "${DIR}/modules/bun-cache.sh"
-# bunCache
+# bun cache
+source "${DIR}/modules/bun-cache.sh"
+bunCache
 
 # ### XCode ###
 source "${DIR}/modules/xcode-artifacts.sh"
