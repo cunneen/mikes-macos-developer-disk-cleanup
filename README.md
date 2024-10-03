@@ -31,10 +31,8 @@ Currently it searches for (and cleans) the following items:
 
 ## How to Use the Script
 
-1. Clone this repository: `git clone https://github.com/cunneen/mikes-macos-developer-disk-cleanup.git cleanup`
-2. Navigate to the directory where the script is located using the `cd` command: `cd cleanup`
-3. Run the script by typing `./mikes-macos-disk-cleanup.sh`.
-4. Panic because all your files are now gone and are never coming back.
+1. `npx mikes-macos-developer-disk-cleanup`
+2. Panic because all your files are now gone and are never coming back.
 
 ## Important Notes
 
