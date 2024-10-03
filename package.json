@@ -1,0 +1,17 @@
+{
+  "name": "mikes-macos-developer-disk-cleanup",
+  "version": "1.0.0",
+  "description": "Cleans up a developer's mac disk space. Aggressively.",
+  "bin": {
+    "mikes-macos-disk-cleanup": "mikes-macos-disk-cleanup.sh"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mike Cunneen",
+  "repository": {
+    "url": "https://github.com/cunneen/mikes-macos-developer-disk-cleanup"
+  },
+  "license": "MIT"
+}
