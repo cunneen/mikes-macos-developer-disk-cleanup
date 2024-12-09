@@ -1,5 +1,21 @@
 {
     "conventionalCommits.scopes": [
-        "android-sdk"
+        "android-avd",
+        "android-build-folders",
+        "android-sdk",
+        "bun-cache",
+        "cocoapods",
+        "docker-files",
+        "gradle-shared",
+        "hints",
+        "homebrew-caches",
+        "library-caches",
+        "meteor-builds-and-packages",
+        "node-modules",
+        "npm-cache",
+        "ruby-gems",
+        "trash",
+        "xcode-artifacts",
+        "yarn-cache"
     ]
 }
