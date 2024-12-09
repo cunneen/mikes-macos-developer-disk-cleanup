@@ -22,5 +22,8 @@
     "@release-it/conventional-changelog": "^9.0.3",
     "husky": "^9.1.7",
     "release-it": "^17.10.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
