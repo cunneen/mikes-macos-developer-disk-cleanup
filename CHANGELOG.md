@@ -1,5 +1,8 @@
 
 
+* chore: :arrow_up: update dependency to node >= 18 (ca92511)
+* chore: :hammer: add GITHUB_TOKEN (4d14cbf)
+
 ## [1.0.5](https://github.com/cunneen/mikes-macos-developer-disk-cleanup/compare/v1.0.4...v1.0.5) (2024-12-09)
 
 ### Features
