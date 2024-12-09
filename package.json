@@ -6,7 +6,9 @@
     "mikes-macos-disk-cleanup": "mikes-macos-disk-cleanup.sh"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "npx release-it -i",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "Mike Cunneen",
@@ -15,7 +17,10 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
     "@release-it/conventional-changelog": "^9.0.3",
+    "husky": "^9.1.7",
     "release-it": "^17.10.0"
   }
 }
