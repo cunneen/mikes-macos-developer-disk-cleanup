@@ -16,6 +16,7 @@
         "ruby-gems",
         "trash",
         "xcode-artifacts",
-        "yarn-cache"
+        "yarn-cache",
+        "infra"
     ]
 }
