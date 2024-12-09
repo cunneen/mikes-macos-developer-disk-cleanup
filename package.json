@@ -13,5 +13,9 @@
   "repository": {
     "url": "https://github.com/cunneen/mikes-macos-developer-disk-cleanup"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^9.0.3",
+    "release-it": "^17.10.0"
+  }
 }
