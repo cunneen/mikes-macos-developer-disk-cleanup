@@ -1,6 +1,6 @@
 homebrewCaches(){
     local BREW;
-    if [ -f /opt/homebrew/bin/brew ]; then
+    if [ -f /opt/homebrew/bin/brew]; then
         # apple silicon
         BREW=/opt/homebrew/bin/brew
     elif [ -f /usr/local/bin/brew ]; then
