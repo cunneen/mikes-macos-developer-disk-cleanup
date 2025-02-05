@@ -8,7 +8,7 @@
     "release": true
   },
   "npm": {
-    "publish": false
+    "publish": true
   },
   "hooks": {
     "after:bump": "npm run release-changelog ${version}"
