@@ -7,23 +7,25 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "dotenvx run release-it -- -i",
+    "release-changelog": "git-cliff --unreleased --prepend CHANGELOG.md --tag ",
+    "release": "dotenvx run release-it -- -i -u",
     "prepare": "husky"
   },
   "keywords": [],
   "author": "Mike Cunneen",
+  "readme": "README.md",
   "repository": {
     "url": "https://github.com/cunneen/mikes-macos-developer-disk-cleanup"
   },
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^19.6.0",
-    "@commitlint/config-conventional": "^19.6.0",
-    "@release-it/conventional-changelog": "^9.0.3",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "git-cliff": "^2.8.0",
     "husky": "^9.1.7",
-    "release-it": "^17.10.0"
+    "release-it": "^18.1.2"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
