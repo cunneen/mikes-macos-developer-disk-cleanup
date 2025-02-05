@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.7 - 2025-02-05
+
+[88faf33](88faf333e35787b53a8988f8a42647e5fde4bfdc)...[30f323d](30f323da067b92b69f912cea5ce85b90997cef44)
+
+### Bug Fixes
+
+- :recycle: try to detect brew location ([2aace79](2aace79ab5570049af7bfd87908cbfd4a5f9334f))
+- :bug: fix avdmanager path error ([9b28ba2](9b28ba2f4163454a5d36e48af93c3e51509a8b9c))
+
+### Documentation
+
+- :bookmark: fix changelog for previous version ([8792d75](8792d759de54c46be3cf3471a7ef3c18f937a41c))
+
+### Miscellaneous Tasks
+
+- :construction_worker: fix changelog generation ([30f323d](30f323da067b92b69f912cea5ce85b90997cef44))
+
 ## 1.0.6 - 2024-12-09
 
 [462ee69](462ee6964edfa65a224b1cc56f1f7cc15fdc600a)...[88faf33](88faf333e35787b53a8988f8a42647e5fde4bfdc)
