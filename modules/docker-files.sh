@@ -3,8 +3,8 @@ dockerFiles() {
     command -v docker >/dev/null 2>&1 && {
         echo "=== docker ==="
         local DOCKER_RUNNING=0;
-        (docker version && DOCKER_RUNNING=1) || (DOCKER_RUNNING=0;)
-        if [ $DOCKER_RUNNING -ne 1 ]; then
+        docker version && DOCKER_RUNNING=1 || DOCKER_RUNNING=0;
+        if [ ! $DOCKER_RUNNING == 1 ]; then
             echo "======= ERROR: docker daemon not running; skipping docker cleanup ======="
         else
             echo " BEFORE DOCKER CLEANUP:"
