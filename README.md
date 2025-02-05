@@ -42,7 +42,7 @@ Currently it searches for (and cleans) the following items:
 
 ## Version History
 
-- v1.0: Initial release
+- See [Changelog][Changelog]
 
 
 <!-- 
@@ -50,7 +50,7 @@ Currently it searches for (and cleans) the following items:
 --->
 
 <!-- LINKS -->
-
+[Changelog]:./CHANGELOG.md
 
 <!-- IMAGES -->
 
