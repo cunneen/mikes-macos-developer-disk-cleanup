@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.8 - 2025-02-05
+
+[64546f9](64546f9fb87b06d86703311de819256761e2f7ad)...[e452923](e452923ade48217127cc9c786a6e12af2eab3829)
+
+### Bug Fixes
+
+- :bug: docker daemon detection ([24321d5](24321d58fb062a28cacaa1fd809da5c37f7d6e79))
+- :bug: docker daemon detection ([6045125](604512591d2763cb5be4bc425b79d968c1697de6))
+- :pencil2: typo ([720298f](720298fedd74c008c8b888d5169188a1aaca865b))
+- :pencil2: typo ([e6620de](e6620deacacfbce8ae0292d208f4a1c2f3117aee))
+- :bug: handle permissions issue ([7c56838](7c56838eee1fa245bf81b040ac4ee4b17dbca9bb))
+
+### Documentation
+
+- :memo: README - fix ref to changelog ([4bfc4a4](4bfc4a4f01631e5a1b6c49e71aefc918251845fc))
+
+### Miscellaneous Tasks
+
+- :construction_worker: release-it - auto-publish NPM module ([e452923](e452923ade48217127cc9c786a6e12af2eab3829))
+
 ## 1.0.7 - 2025-02-05
 
 [88faf33](88faf333e35787b53a8988f8a42647e5fde4bfdc)...[30f323d](30f323da067b92b69f912cea5ce85b90997cef44)
