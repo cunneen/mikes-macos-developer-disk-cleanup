@@ -131,53 +131,53 @@ echo "DISK USAGE BEFORE CLEANUP: ${INITIALSPACE}"
 # addHint function
 source "${DIR}/modules/hints.sh"
 
-# CocoaPods
-source "${DIR}/modules/cocoapods.sh"
-cocoapods
+# # CocoaPods
+# source "${DIR}/modules/cocoapods.sh"
+# cocoapods
 
-# remove everything in ~/Library/Caches
-source "${DIR}/modules/library-caches.sh"
-libraryCaches
+# # remove everything in ~/Library/Caches
+# source "${DIR}/modules/library-caches.sh"
+# libraryCaches
 
-# remove everything from Trash - this sometimes prompts for confirmation
-source "${DIR}/modules/trash.sh"
-trash
+# # remove everything from Trash - this sometimes prompts for confirmation
+# source "${DIR}/modules/trash.sh"
+# trash
 
-# meteor
-source "${DIR}/modules/meteor-builds-and-packages.sh"
-meteorBuildsAndPackages
+# # meteor
+# source "${DIR}/modules/meteor-builds-and-packages.sh"
+# meteorBuildsAndPackages
 
-# npm cache
-source "${DIR}/modules/npm-cache.sh"
-npmCache
+# # npm cache
+# source "${DIR}/modules/npm-cache.sh"
+# npmCache
 
-# yarn cache
-source "${DIR}/modules/yarn-cache.sh"
-yarnCache
+# # yarn cache
+# source "${DIR}/modules/yarn-cache.sh"
+# yarnCache
 
-# bun cache
-source "${DIR}/modules/bun-cache.sh"
-bunCache
+# # bun cache
+# source "${DIR}/modules/bun-cache.sh"
+# bunCache
 
-# ### XCode ###
-source "${DIR}/modules/xcode-artifacts.sh"
-xcodeArtifacts
+# # ### XCode ###
+# source "${DIR}/modules/xcode-artifacts.sh"
+# xcodeArtifacts
 
-# Clear shared gradle caches
-source "${DIR}/modules/gradle-shared.sh"
-gradleShared
+# # Clear shared gradle caches
+# source "${DIR}/modules/gradle-shared.sh"
+# gradleShared
 
-# node_modules folders
-source "${DIR}/modules/node-modules.sh"
-nodeModules
+# # node_modules folders
+# source "${DIR}/modules/node-modules.sh"
+# nodeModules
 
-# ruby gems
-source "${DIR}/modules/ruby-gems.sh"
-rubyGems
+# # ruby gems
+# source "${DIR}/modules/ruby-gems.sh"
+# rubyGems
 
-# Docker
-source "${DIR}/modules/docker-files.sh"
-dockerFiles
+# # Docker
+# source "${DIR}/modules/docker-files.sh"
+# dockerFiles
 
 # Android projects - remove build folders
 source "${DIR}/modules/android-build-folders.sh"
