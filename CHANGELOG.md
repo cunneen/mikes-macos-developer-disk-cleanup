@@ -4,74 +4,121 @@ All notable changes to this project will be documented in this file.
 
 ## 1.0.8 - 2025-02-05
 
-[64546f9](64546f9fb87b06d86703311de819256761e2f7ad)...[e452923](e452923ade48217127cc9c786a6e12af2eab3829)
+[v1.0.7...v1.0.8](../../compare/v1.0.7...v1.0.8)
 
-### Bug Fixes
+### :bug: Bug fixes
 
-- :bug: docker daemon detection ([24321d5](24321d58fb062a28cacaa1fd809da5c37f7d6e79))
-- :bug: docker daemon detection ([6045125](604512591d2763cb5be4bc425b79d968c1697de6))
-- :pencil2: typo ([720298f](720298fedd74c008c8b888d5169188a1aaca865b))
-- :pencil2: typo ([e6620de](e6620deacacfbce8ae0292d208f4a1c2f3117aee))
-- :bug: handle permissions issue ([7c56838](7c56838eee1fa245bf81b040ac4ee4b17dbca9bb))
+- *(docker-files)* :bug: docker daemon detection [<sup>(24321d5)</sup>][24321d5]
+- *(docker-files)* :bug: docker daemon detection [<sup>(6045125)</sup>][6045125]
+- *(homebrew-caches)* :pencil2: typo [<sup>(720298f)</sup>][720298f]
+- *(homebrew-caches)* :pencil2: typo [<sup>(e6620de)</sup>][e6620de]
+- *(library-caches)* :bug: handle permissions issue [<sup>(7c56838)</sup>][7c56838]
+- Revert "fix(homebrew-caches): :pencil2: typo"
+  - This reverts commit 720298fedd74c008c8b888d5169188a1aaca865b. [<sup>(6009b1f)</sup>][6009b1f]
 
-### Documentation
+### :memo: Documentation
 
-- :memo: README - fix ref to changelog ([4bfc4a4](4bfc4a4f01631e5a1b6c49e71aefc918251845fc))
+- :memo: README - fix ref to changelog [<sup>(4bfc4a4)</sup>][4bfc4a4]
 
-### Miscellaneous Tasks
+### :gear: Miscellaneous Tasks
 
-- :construction_worker: release-it - auto-publish NPM module ([e452923](e452923ade48217127cc9c786a6e12af2eab3829))
+- :construction_worker: release-it - auto-publish NPM module [<sup>(e452923)</sup>][e452923]
+- Release 1.0.8 [<sup>(6424ffc)</sup>][6424ffc]
+
+<!-- LINKS -->
+[4bfc4a4]:../../commit/4bfc4a4f01631e5a1b6c49e71aefc918251845fc
+[24321d5]:../../commit/24321d58fb062a28cacaa1fd809da5c37f7d6e79
+[6045125]:../../commit/604512591d2763cb5be4bc425b79d968c1697de6
+[720298f]:../../commit/720298fedd74c008c8b888d5169188a1aaca865b
+[6009b1f]:../../commit/6009b1f66a1eccd7c4ef842d5dd769b250d54c1a
+[e6620de]:../../commit/e6620deacacfbce8ae0292d208f4a1c2f3117aee
+[7c56838]:../../commit/7c56838eee1fa245bf81b040ac4ee4b17dbca9bb
+[e452923]:../../commit/e452923ade48217127cc9c786a6e12af2eab3829
+[6424ffc]:../../commit/6424ffcda40491db4ff9ef84a8adf38acdb67df1
 
 ## 1.0.7 - 2025-02-05
 
-[88faf33](88faf333e35787b53a8988f8a42647e5fde4bfdc)...[30f323d](30f323da067b92b69f912cea5ce85b90997cef44)
+[v1.0.6...v1.0.7](../../compare/v1.0.6...v1.0.7)
 
-### Bug Fixes
+### :bug: Bug fixes
 
-- :recycle: try to detect brew location ([2aace79](2aace79ab5570049af7bfd87908cbfd4a5f9334f))
-- :bug: fix avdmanager path error ([9b28ba2](9b28ba2f4163454a5d36e48af93c3e51509a8b9c))
+- *(homebrew-caches)* :recycle: try to detect brew location [<sup>(2aace79)</sup>][2aace79]
+- *(android-avd)* :bug: fix avdmanager path error [<sup>(9b28ba2)</sup>][9b28ba2]
 
-### Documentation
+### :memo: Documentation
 
-- :bookmark: fix changelog for previous version ([8792d75](8792d759de54c46be3cf3471a7ef3c18f937a41c))
+- *(infra)* :bookmark: fix changelog for previous version [<sup>(8792d75)</sup>][8792d75]
 
-### Miscellaneous Tasks
+### :gear: Miscellaneous Tasks
 
-- :construction_worker: fix changelog generation ([30f323d](30f323da067b92b69f912cea5ce85b90997cef44))
+- :construction_worker: fix changelog generation [<sup>(30f323d)</sup>][30f323d]
+- Release 1.0.7 [<sup>(64546f9)</sup>][64546f9]
+
+<!-- LINKS -->
+[8792d75]:../../commit/8792d759de54c46be3cf3471a7ef3c18f937a41c
+[2aace79]:../../commit/2aace79ab5570049af7bfd87908cbfd4a5f9334f
+[9b28ba2]:../../commit/9b28ba2f4163454a5d36e48af93c3e51509a8b9c
+[30f323d]:../../commit/30f323da067b92b69f912cea5ce85b90997cef44
+[64546f9]:../../commit/64546f9fb87b06d86703311de819256761e2f7ad
 
 ## 1.0.6 - 2024-12-09
 
-[462ee69](462ee6964edfa65a224b1cc56f1f7cc15fdc600a)...[88faf33](88faf333e35787b53a8988f8a42647e5fde4bfdc)
+[v1.0.5...v1.0.6](../../compare/v1.0.5...v1.0.6)
 
-### Miscellaneous Tasks
+### :gear: Miscellaneous Tasks
 
-- :hammer: add GITHUB_TOKEN ([4d14cbf](4d14cbfae18980d645d60f10a7feef9ce7650b06))
-- :arrow_up: update dependency to node >= 18 ([ca92511](ca925115cb3137e795d55769dfa7332cf38b89cf))
-- Release 1.0.6 ([88faf33](88faf333e35787b53a8988f8a42647e5fde4bfdc))
+- :hammer: add GITHUB_TOKEN [<sup>(4d14cbf)</sup>][4d14cbf]
+- :arrow_up: update dependency to node >= 18 [<sup>(ca92511)</sup>][ca92511]
+- Release 1.0.6 [<sup>(88faf33)</sup>][88faf33]
+
+<!-- LINKS -->
+[4d14cbf]:../../commit/4d14cbfae18980d645d60f10a7feef9ce7650b06
+[ca92511]:../../commit/ca925115cb3137e795d55769dfa7332cf38b89cf
+[88faf33]:../../commit/88faf333e35787b53a8988f8a42647e5fde4bfdc
 
 ## 1.0.5 - 2024-12-09
 
-[bc39b3e](bc39b3e006b19b68acd7deb3b30a8be93b50a52b)...[462ee69](462ee6964edfa65a224b1cc56f1f7cc15fdc600a)
+[v1.0.4...v1.0.5](../../compare/v1.0.4...v1.0.5)
 
-### Bug Fixes
+### :rocket: New features
 
-- :bug: fix issue with android sdkmanager path ([6bb0ba6](6bb0ba6fcca63f56f44808eff220eda86579ce85))
+- Add commit linting and release-it [<sup>(12729bd)</sup>][12729bd]
 
-### Features
+### :bug: Bug fixes
 
-- Add commit linting and release-it ([12729bd](12729bd019abd9219e6cb3eeda040fc90e836228))
+- *(android-sdk)* :bug: fix issue with android sdkmanager path [<sup>(6bb0ba6)</sup>][6bb0ba6]
 
-### Miscellaneous Tasks
+### :gear: Miscellaneous Tasks
 
-- :hammer: add vscode conventional commit scopes ([84e7ca5](84e7ca516dccec2ea1a798859480fbd65e77b935))
-- :hammer: add vscode conventional commit scopes ([5979eed](5979eed216a65ef6faa733bf71d2a5f47ffb708b))
-- :hammer: add release-it config ([639b8bb](639b8bb2122be6c4d7a83267c516636458d1743c))
-- Release 1.0.5 ([462ee69](462ee6964edfa65a224b1cc56f1f7cc15fdc600a))
+- *(infra)* :hammer: add vscode conventional commit scopes [<sup>(84e7ca5)</sup>][84e7ca5]
+- *(infra)* :hammer: add vscode conventional commit scopes [<sup>(5979eed)</sup>][5979eed]
+- *(infra)* :hammer: add release-it config [<sup>(639b8bb)</sup>][639b8bb]
+- Release 1.0.5 [<sup>(462ee69)</sup>][462ee69]
+
+<!-- LINKS -->
+[6bb0ba6]:../../commit/6bb0ba6fcca63f56f44808eff220eda86579ce85
+[84e7ca5]:../../commit/84e7ca516dccec2ea1a798859480fbd65e77b935
+[5979eed]:../../commit/5979eed216a65ef6faa733bf71d2a5f47ffb708b
+[639b8bb]:../../commit/639b8bb2122be6c4d7a83267c516636458d1743c
+[12729bd]:../../commit/12729bd019abd9219e6cb3eeda040fc90e836228
+[462ee69]:../../commit/462ee6964edfa65a224b1cc56f1f7cc15fdc600a
 
 ## 1.0.4 - 2024-10-03
 
-[d44b8c0](d44b8c0a12b30f9b4d8f15f89a1ee80150d147cd)...[bc39b3e](bc39b3e006b19b68acd7deb3b30a8be93b50a52b)
+[v1.0.3...v1.0.4](../../compare/v1.0.3...v1.0.4)
+
+<!-- LINKS -->
+[bc39b3e]:../../commit/bc39b3e006b19b68acd7deb3b30a8be93b50a52b
 
 ## 1.0.3 - 2024-10-03
+
+
+<!-- LINKS -->
+[9ae79ca]:../../commit/9ae79caa43c647f21aee76bab842286e1b9b10ff
+[1d768b4]:../../commit/1d768b473316daacb557b0cbe8a25ab69f6c7f94
+[c33840f]:../../commit/c33840f3acdee816ec75861bc7d96c9b9497579d
+[dd9c730]:../../commit/dd9c73025a7e2fc9f07766dd76e67a85eafe4c1c
+[5b23c45]:../../commit/5b23c45d8ee2ce2a051a99295c8701e1c747ec8f
+[d44b8c0]:../../commit/d44b8c0a12b30f9b4d8f15f89a1ee80150d147cd
 
 <!-- generated by git-cliff -->
