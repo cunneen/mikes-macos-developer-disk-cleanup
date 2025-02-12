@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.9 - 2025-02-12
+
+[v1.0.8...1.0.9](../../compare/v1.0.8...1.0.9)
+
+### :memo: Documentation
+
+- *(infra)* :memo: reconfigure changelog format [<sup>(c005a80)</sup>][c005a80]
+
+### :gear: Miscellaneous Tasks
+
+- *(infra)* :memo: reconfigure changelog format [<sup>(97967ac)</sup>][97967ac]
+
+<!-- LINKS -->
+[97967ac]:../../commit/97967ac83f415252769ee3a25294acd5677782df
+[c005a80]:../../commit/c005a80f75a2794b58ccb207a86202c7d943f51b
+
 ## 1.0.8 - 2025-02-05
 
 [v1.0.7...v1.0.8](../../compare/v1.0.7...v1.0.8)
