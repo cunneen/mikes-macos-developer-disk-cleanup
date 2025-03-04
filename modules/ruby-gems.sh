@@ -19,7 +19,7 @@ rubyGems() {
             done
             unset IFS
             # remove gems
-            gem cleanup -d
+            gem cleanup
         }
     }
 
