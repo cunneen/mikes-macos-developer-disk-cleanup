@@ -41,5 +41,12 @@ xcodeArtifacts() {
             echo "${DEVICESUPPORTCOMMAND}"
             addHint "${DEVICESUPPORTCOMMAND}"
         fi
+
+        echo "    removing unavailable simulator devices..."
+        xcrun simctl delete unavailable
+
+        echo "    removing all but the most recent iOS simulator runtime..."
+        xcrun simctl runtime list | grep -E '^iOS' | sort -r -n -k 2 | awk 'NR>1{print $5}' | xargs -I{} xcrun simctl runtime delete {}
+
     fi # xcode
 }
