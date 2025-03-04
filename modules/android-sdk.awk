@@ -61,39 +61,51 @@ BEGIN{
     } 
     lastPath="";
     lastCat="";
+    processedHeading=0;
     delete itemsToRemove[0]; # initializes a new array
     itemsToRemoveLength=0; # length of array
 }
 /Installed packages:/{
     inInstalled=1;
     inObsolete=0;
+    processedHeading=0;
 }
 /Installed Obsolete Packages:/{
     inInstalled=0;
     inObsolete=1;
+    processedHeading=0;
 }
-/\;/{
-    path=$1; 
-    version=$3;
-    loc=$NF; # last field is location; description has spaces to hard to grab
-    cat=path; 
-    gsub(/;.+$/,"",cat); # the category is just the first portion of the path before the semicolon e.g. "platforms"
-    if (inInstalled) {
-        # If this category is the same as the last one, add the 
-        #  previous record to our list of ones to remove (and keep only the most recent).
-        if (cat == lastCat) {
-            # add the last category as a new item on the end of our array
+$7 ~ /^-------/ { # this is the end of a heading; move to the next line
+    processedHeading=1;
+    next;
+}
+$0 ~ /^.+$/ { # non-empty line
+    if (processedHeading == 1) {
+        path=$1; 
+        version=$3;
+        loc=$NF; # last field is location; description has spaces to hard to grab
+        cat=path; 
+        gsub(/;.+$/,"",cat); # the category is just the first portion of the path before the semicolon e.g. "platforms"
+
+        if (inInstalled) {
+            # If this category is the same as the last one, add the 
+            #  previous record to our list of ones to remove (and keep only the most recent).
+            if (cat == lastCat) {
+                # add the last category as a new item on the end of our array
+                printf("Adding least-recent\"%s\" to itemsToRemove (superceded by \"%s\")\n", lastPath, path);
+                itemsToRemoveLength++;
+                itemsToRemove[itemsToRemoveLength] = lastPath;
+            } else {
+                # we're in a category we haven't yet seen (or the output is not sorted and everything will fall apart)
+            }
+            lastCat = cat;
+            lastPath = path;
+        } else if (inObsolete) {
+            printf("Obsolete: Adding \"%s\" to itemsToRemove\n", path);
+            # we'll just add all obsolete packages to the list of items to remove
             itemsToRemoveLength++;
-            itemsToRemove[itemsToRemoveLength] = lastPath;
-        } else {
-            # we're in a new category
+            itemsToRemove[itemsToRemoveLength] = path;
         }
-        lastCat = cat;
-        lastPath = path;
-    } else if (inObsolete) {
-        # we'll just add all obsolete packages to the list of items to remove
-        itemsToRemoveLength++;
-        itemsToRemove[itemsToRemoveLength] = path;
     }
 }
 END{
