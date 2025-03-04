@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.10 - 2025-03-04
+
+[v1.0.9...1.0.10](../../compare/v1.0.9...1.0.10)
+
+### :rocket: New features
+
+- *(xcode-artifacts)* :sparkles: remove iOS runtimes [<sup>(586155a)</sup>][586155a]
+
+### :bug: Bug fixes
+
+- *(ruby-gems)* :bug: remove dry-run flag [<sup>(5525759)</sup>][5525759]
+- *(android-sdk)* :bug: fix obsolete package delete [<sup>(60c184a)</sup>][60c184a]
+
+### :memo: Documentation
+
+- *(infra)* :memo: fix changelog links [<sup>(a81eb4e)</sup>][a81eb4e]
+
+### :recycle: Refactor
+
+- :recycle: main : separate module loading and execution [<sup>(496b562)</sup>][496b562]
+
+### :gear: Miscellaneous Tasks
+
+- *(infra)* :memo: workaround git-cliff bug [<sup>(21e404c)</sup>][21e404c]
+- *(infra)* :wrench: .env (encrypted): rotate GITHUB_TOKEN [<sup>(2582880)</sup>][2582880]
+
+<!-- LINKS -->
+[21e404c]:../../commit/21e404c3062b38ab03beec99b5a1cd35c54c9a49
+[a81eb4e]:../../commit/a81eb4e5c3830d6b9ae01e07ce8f0a9d90e7b575
+[2582880]:../../commit/2582880f7274c54c021d639f87c748a11996e204
+[5525759]:../../commit/5525759d5fabda664b505f1721ddbf661a3b4ebd
+[60c184a]:../../commit/60c184a8ccde88d9ee3a2e51ca9d8fd01877e03a
+[586155a]:../../commit/586155aa21c63b79bf2f026d41f8ee24038852bd
+[496b562]:../../commit/496b562e97e697ff41f68207b319996d8558c143
+
 ## 1.0.9 - 2025-02-12
 
 [v1.0.8...v1.0.9](../../compare/v1.0.8...v1.0.9)
