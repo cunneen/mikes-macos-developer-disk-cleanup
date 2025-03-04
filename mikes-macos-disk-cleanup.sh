@@ -133,58 +133,67 @@ source "${DIR}/modules/hints.sh"
 
 # CocoaPods
 source "${DIR}/modules/cocoapods.sh"
-cocoapods
 
 # remove everything in ~/Library/Caches
 source "${DIR}/modules/library-caches.sh"
-libraryCaches
 
 # remove everything from Trash - this sometimes prompts for confirmation
 source "${DIR}/modules/trash.sh"
-trash
 
 # meteor
 source "${DIR}/modules/meteor-builds-and-packages.sh"
-meteorBuildsAndPackages
 
 # npm cache
 source "${DIR}/modules/npm-cache.sh"
-npmCache
 
 # yarn cache
 source "${DIR}/modules/yarn-cache.sh"
-yarnCache
 
 # bun cache
 source "${DIR}/modules/bun-cache.sh"
-bunCache
 
 # ### XCode ###
 source "${DIR}/modules/xcode-artifacts.sh"
-xcodeArtifacts
 
 # Clear shared gradle caches
 source "${DIR}/modules/gradle-shared.sh"
-gradleShared
 
 # node_modules folders
 source "${DIR}/modules/node-modules.sh"
-nodeModules
 
 # ruby gems
 source "${DIR}/modules/ruby-gems.sh"
-rubyGems
 
 # Docker
 source "${DIR}/modules/docker-files.sh"
-dockerFiles
 
 # Android projects - remove build folders
 source "${DIR}/modules/android-build-folders.sh"
-androidBuildFolders
 
 # Android SDKs
 source "${DIR}/modules/android-sdk.sh"
+
+# Android AVDs
+source "${DIR}/modules/android-avd.sh"
+
+# Homebrew Caches
+source "${DIR}/modules/homebrew-caches.sh"
+
+# ======
+# Now run all our modules
+cocoapods
+libraryCaches
+trash
+meteorBuildsAndPackages
+npmCache
+yarnCache
+bunCache
+xcodeArtifacts
+gradleShared
+nodeModules
+rubyGems
+dockerFiles
+androidBuildFolders
 set +e ; # don't exit on error
 androidSDK
 RETCODE=$?
@@ -199,13 +208,7 @@ if [ ${RETCODE} -ne 0 ]; then
     exit ${RETCODE}
   fi
 fi
-
-# Android AVDs
-source "${DIR}/modules/android-avd.sh"
 androidAVD
-
-# Homebrew Caches
-source "${DIR}/modules/homebrew-caches.sh"
 homebrewCaches
 
 # get the disk usage now that we've run the cleanup
