@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -l
+#!/bin/bash
 # ####### Mikes Ultimate Mac OS Developer Disk Cleanup ######
 # @author Mike Cunneen (https://github.com/cunneen)
 # @license MIT
@@ -8,7 +8,7 @@
 # This script will clean up your Mac's disk space. Aggressively.
 # Currently it searches for (and cleans) the following items:
 # - MacOS Trash
-# - MacOS (User) Library Caches
+# - MacOS (User) Library Caches - ALL OF THEM!
 # - meteor package cache (shared between projects)
 # - meteor projects in your development base directory
 # - node_modules folders in your development base directory
@@ -27,6 +27,16 @@
 # - Android AVDs
 # - Homebrew caches
 # - CocoaPods
+# - GoLang cache
+# - Cargo Caches
+# - MediaAnalysisD cache
+# - MobileSMS temp files 
+# - MS Teams temp files 
+# - Messages Previews cache
+# - Log files
+# - VSCode Extensions
+# - Expo caches
+# - ~/.cache
 
 # ==== CONFIGURATION DEFAULTS - change as needed ====
 CONFIGFILE="${HOME}/.config/mikes-macos-disk-cleanup.env" # you'll be prompted to create this if it doesn't exist
@@ -179,6 +189,36 @@ source "${DIR}/modules/android-avd.sh"
 # Homebrew Caches
 source "${DIR}/modules/homebrew-caches.sh"
 
+# Golang Caches
+source "${DIR}/modules/golang-cache.sh"
+
+# Cargo Caches
+source "${DIR}/modules/cargo-cache.sh"
+
+# MediaAnalysisD cache
+source "${DIR}/modules/mediaanalysisd.sh"
+
+# MobileSMS temp files 
+source "${DIR}/modules/mobilesmstmp.sh"
+
+# MS Teams temp files 
+source "${DIR}/modules/msteams.sh"
+
+# Messages Previews cache
+source "${DIR}/modules/messagespreviews.sh"
+
+# Log files
+source "${DIR}/modules/logs.sh"
+
+# VSCode Extensions
+source "${DIR}/modules/vscodeextensions.sh"
+
+# Expo caches
+source "${DIR}/modules/expo.sh"
+
+# ~/.cache
+source "${DIR}/modules/dotcache.sh"
+
 # ======
 # Now run all our modules
 cocoapods
@@ -193,6 +233,16 @@ gradleShared
 nodeModules
 rubyGems
 dockerFiles
+goCaches
+cargoCaches
+mediaanalysisd
+mobilesmstmp
+msteams
+messagespreviews
+logs
+vscodeextensions
+expo
+dotcache
 androidBuildFolders
 set +e ; # don't exit on error
 androidSDK

@@ -25,7 +25,6 @@ homebrewCaches(){
         local SIZEAFTER=$(du -hs ${HOME}/Library/Caches/Homebrew | cut -f1)
         echo "    cache size before: ${SIZEBEFORE}; after: ${SIZEAFTER}"
     } || {
-        echo "brew command not found"
-    	return 1;
+	    echo "=== 'brew' command not found; continuing... ==="
     }
 }

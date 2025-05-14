@@ -1,42 +1,47 @@
 xcodeArtifacts() {
+    local DEVELOPERDIR="${HOME}/Library/Developer"
     # ### XCode ###
-    if [ -d ${HOME}/Library/Developer/Xcode ]; then
+    if [ -d ${DEVELOPERDIR}/Xcode ]; then
         echo "=== clearing Xcode folders ==="
 
         # Xcode DerivedData
-        if [ -d ${HOME}/Library/Developer/Xcode/DerivedData ]; then
-            local XCDDSIZE=$(du -hs ${HOME}/Library/Developer/Xcode/DerivedData | cut -f1)
+        local DERIVEDDATADIR="${DEVELOPERDIR}/Xcode/DerivedData"
+        if [ -d "${DERIVEDDATADIR}" ]; then
+            local XCDDSIZE=$(du -hs "${DERIVEDDATADIR}" | cut -f1)
             echo "   removing Xcode DerivedData(${XCDDSIZE})..."
-            rm -rf ${HOME}/Library/Developer/Xcode/DerivedData
+            rm -rf "${DERIVEDDATADIR}"
         fi
 
         # Xcode DeviceLogs
-        if [ -d ${HOME}/Library/Developer/Xcode/DeviceLogs ]; then
-            local XCDLSIZE=$(du -hs ${HOME}/Library/Developer/Xcode/DeviceLogs | cut -f1)
+        local DEVICELOGDIR="${DEVELOPERDIR}/Xcode/DeviceLogs"
+        if [ -d "${DEVICELOGDIR}" ]; then
+            local XCDLSIZE=$(du -hs "${DEVICELOGDIR}" | cut -f1)
             echo "   removing Xcode DeviceLogs (${XCDLSIZE})..."
-            rm -rf ${HOME}/Library/Developer/Xcode/DeviceLogs
+            rm -rf "${DEVICELOGDIR}"
         fi
 
         # Xcode DeviceLogs
-        if [ -d ${HOME}/Library/Developer/CoreSimulator/Caches ]; then
-            local XCCACHESIZE=$(du -hs ${HOME}/Library/Developer/CoreSimulator/Caches | cut -f1)
+        local SIMULATORCACHEDIR="${DEVELOPERDIR}/CoreSimulator/Caches"
+        if [ -d "${SIMULATORCACHEDIR}" ]; then
+            local XCCACHESIZE=$(du -hs "${SIMULATORCACHEDIR}" | cut -f1)
             echo "   removing Xcode CoreSimulator Caches (${XCCACHESIZE})..."
-            rm -rf ${HOME}/Library/Developer/CoreSimulator/Caches
+            rm -rf "${SIMULATORCACHEDIR}"
         fi
 
         # iOS device support files
-        if [ -d "${HOME}/Library/Developer/Xcode/iOS DeviceSupport" ]; then
+        local DEVICESUPPORTDIR="${DEVELOPERDIR}/Xcode/iOS DeviceSupport"
+        if [ -d "${DEVICESUPPORTDIR}" ]; then
             # display commands to remove iOS device support files (but don't actually remove);
             #   e.g. this would display something like:
             #        - This command would recover 3812 megabytes:
             #            rm -rf "/Users/me/Library/Developer/Xcode/iOS DeviceSupport/iPhone12,8 17.6.1 (21G93)"
             local DEVICESUPPORTCOMMAND=$(
-                du -hs "${HOME}/Library/Developer/Xcode/iOS DeviceSupport/"* |
+                du -hs "${DEVICESUPPORTDIR}"/* |
                     awk '{\
-            r=$0;\
-            gsub(/^[^[:space:]]+[[:space:]]+/,"",r);\
-            printf("- This command would recover an additional %s:\n    rm -rf \"%s\"\n",$1, r);\
-          }'
+                    r=$0;\
+                    gsub(/^[^[:space:]]+[[:space:]]+/,"",r);\
+                    printf("- This command would recover an additional %s:\n    rm -rf \"%s\"\n",$1, r);\
+                  }'
             )
             echo "${DEVICESUPPORTCOMMAND}"
             addHint "${DEVICESUPPORTCOMMAND}"
