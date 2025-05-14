@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.11 - 2025-05-14
+
+[v1.0.10...1.0.11](../../compare/v1.0.10...1.0.11)
+
+### :rocket: New features
+
+- :sparkles: add more folders to clear [<sup>(f97bab9)</sup>][f97bab9]
+
+### :bug: Bug fixes
+
+- *(*)* :arrow_up: npm audit fix [<sup>(fe33211)</sup>][fe33211]
+
+### :gear: Miscellaneous Tasks
+
+- :technologist: vscode config: conventional commit scopes [<sup>(58af793)</sup>][58af793]
+
+<!-- LINKS -->
+[f97bab9]:../../commit/f97bab9f8bd42adcdabba32a6c34139874b38b64
+[fe33211]:../../commit/fe33211298811f123e7a5a7189786f668ee9572b
+[58af793]:../../commit/58af793e6a88cf7c756db682548d800eff3ffbae
+
 ## 1.0.10 - 2025-03-04
 
 [v1.0.9...1.0.10](../../compare/v1.0.9...1.0.10)
