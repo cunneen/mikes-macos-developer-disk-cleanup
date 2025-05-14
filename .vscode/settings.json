@@ -9,14 +9,15 @@
         "gradle-shared",
         "hints",
         "homebrew-caches",
+        "infra",
         "library-caches",
         "meteor-builds-and-packages",
         "node-modules",
         "npm-cache",
         "ruby-gems",
+        "*",
         "trash",
         "xcode-artifacts",
         "yarn-cache",
-        "infra"
     ]
 }
